@@ -19,7 +19,7 @@ puts "Creating restaurants..."
   )
   puts "Restaurant #{restaurant.name} created"
   puts "Writing reviews for #{restaurant.name}..."
-  rand(1..4).times do
+  rand(2..4).times do
     review = Review.create(
       rating: rand(0..5),
       content: Faker::Restaurant.review,

@@ -1,7 +1,20 @@
 <h1><%= @restaurant.name %></h1>
 <h3>a <%= @restaurant.category.capitalize %> restaurant</h3>
+
 <br>
+
 <p>Address: <%= @restaurant.address %></p>
 <p>Phone: <%= @restaurant.phone_number %></p>
 
-<div><%= link_to "Home", restaurants_path, class: "btn btn-outline-primary" %></div>
+<br>
+
+<p><strong>Reviews</strong></p>
+<p><%= link_to "Add review", new_restaurant_review_path(@restaurant) %></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <p><%= review.content %></p>
+      <%= review.rating.zero? ? "0 stars" : "⭐" * review.rating %> (out of 5)
+    </li>
+  <% end %>
+</ul>
