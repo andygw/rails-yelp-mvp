@@ -1,3 +1,3 @@
 # README
 
-A simple Yelp clone, with restaurants and reviews
+A two-model Rails app with restaurants and anonymous reviews.
